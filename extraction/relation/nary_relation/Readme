@@ -1,0 +1,28 @@
+N-ray Relation Extraction using Graph State LSTM
+Citation:
+@article{song2018n,
+  title={N-ary relation extraction using graph state LSTM},
+  author={Song, Linfeng and Zhang, Yue and Wang, Zhiguo and Gildea, Daniel},
+  journal={arXiv preprint arXiv:1808.09101},
+  year={2018}
+}
+Link: https://arxiv.org/abs/1808.09101
+Input data:
+"Data_graph", which is in a json format file containing information such as PubMed articleID, paragraph number, sentence number, and the information about the tokens including part-of-speech tags, dependencies, etc. produced by Stanford coreNLP tool is given as input which is further preprocessed.
+Output is to predict the relation between N entities.
+ 
+The model uses Graph state LSTM concept which takes input graph G= <V,E>, which takes both source words and edge labels for calculating the input representation to capture non-local information, model performs information exchange between words through a recurrent state transition process, and later uses logistic regression classifier to make a prediction.
+Python 2.7 along with tensorflow-gpu is used to run the code.
+
+
+ 
+Dataset :
+Biomedical-domain dataset is used fot focusing on drug gene-mutation ternary relations, which are extracted from PubMed. It contains 6987 ternary instances about drug-gene-mutation relations, and 6087 binary instances about drug-mutation sub-relations.
+Evaluation metrics and results:
+Accuracy for training model is 82.5%
+Average Decoding time is 6.594 sec  
+The Accuracy for testing is 62.5%
+Decoding time is 2.938 sec
+Youtube link: https://youtu.be/Vpk2Q0Aj2Cg
+Link: https://colab.research.google.com/drive/1x3P8vyLti_NK_ZiziaWpj78HbiF97hrw
+Dataset : https://drive.google.com/drive/folders/1Jgw6A08nh-4umCV7tfqQ6HFg7mtDwo67
